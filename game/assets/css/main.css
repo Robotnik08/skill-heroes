@@ -1,0 +1,91 @@
+#game-container {
+    margin: auto;
+    width: fit-content;
+    border: black 20px solid;
+}
+
+.color-box {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    animation: spin_click 0.4s ease-in-out forwards
+}
+
+.color-box[color="0"] { background-color: red; }
+.color-box[color="1"] { background-color: blue; }
+.color-box[color="2"] { background-color: green; }
+.color-box[color="3"] { background-color: yellow; }
+.color-box[color="4"] { background-color: cyan; }
+.color-box[color="5"] { background-color: gray; }
+.color-box[color="6"] { background-color: pink; }
+
+.color-box:hover {
+    animation: opacity_change 0.3s ease-in-out forwards, size_change 0.3s ease-in-out forwards;
+}
+
+.row {
+    display: flex;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.GUI {
+    display: flex;
+    width: 100%;
+}
+
+#info {
+    font-size:x-large;
+    margin: 3px;
+}
+
+#timer {
+    margin: 2px;
+    font-size: large;
+}
+
+dialog {
+    width: 40%;
+    height: 40%;
+}
+
+/* KeyFrame animation #1 */
+@keyframes opacity_change {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+/* KeyFrame animation #2 */
+@keyframes size_change {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+    
+}
+
+
+/* KeyFrame animation #3 */
+@keyframes spin_click {
+    0%, 100% {
+        transform: rotate(0deg);
+        transform: scale(1);
+    }
+    33% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    66% {
+        transform: rotate(-3deg);
+    }
+}
